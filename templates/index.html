@@ -1,17 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    {% if ism %}
-    <h1>Salom {{ism}}</h1>
-    {% else %}
-    <h1>Salom Mehmon</h1>
-    {% endif %}
-    {% for i in ismlar %}
-<p>{{i}}</p>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row container">
+
+  <div class="row">
+     {% for meva in mevalar %}
+        <div class="card" style="width: 18rem;">
+    <img src={{meva.img_url}} class="card-img-top" alt="...">
+    <div class="card-body">
+    <h5 class="card-title">{{meva.title}}</h5>
+    <p class="card-text">{{meva.desc}}</p>
+    <a href="#" class="btn btn-primary">{{meva.price}} so'm</a>
+  </div>
+    </div>
 {% endfor %}
-</body>
-</html>
+  </div>
+
+</div>
+
+{% endblock %}
